@@ -1,0 +1,23 @@
+corridor,buyer_name,sayari_entity_id,shipments,latest_shipment_date,risk_flags,notes
+Uganda->UAE,AVANISH TRADING LLC,cFmw_6_gz-OAE1m4s6Juwg,308,2024-11-28,basel_aml;cpi_score,
+Uganda->UAE,TONGA TRADING FZE,m7q8JvoikH5OfnH0FCdiyw,290,2024-09-26,psa_imports_from_sanctioned_usa_ofac_sdn_entity,
+Uganda->UAE,ADYA JEWELLERY LLC,WmrfUtgr2MAJb0zya7cpLg,283,2024-11-24,,
+Uganda->UAE,CODA JEWELLERY LLC,fMf1LLcELov7n7zFS9aYGg,129,2024-01-28,,
+Uganda->UAE,ASTER GLOBAL TRADING LLC,DK-QG7ztdpTt99Sk_wwvBA,108,,exports_ilab_child_labor;exports_ilab_forced_labor,
+Uganda->UAE,AR BULLION GOLD TRADING L.L.C,TrSzn4edVbCIZ6hDb9sN5w,72,,,Gold Souq Deira
+Uganda->UAE,Arabic-script name (entity record),9W6thSaDDwDhT63SJ1Qcnw,71,2024-02-16,basel_aml;cpi_score;psa_imports_from_sanctioned_usa_ofac_sdn_entity,Name shown in Arabic script in Sayari
+Uganda->UAE,NOOR ALHEKMA GOLD TRADING L.L.C,a6zYMgFY_YwBEUgNgpfsEA,63,,,
+Tanzania->UAE,MOTIWALA GOLD TRADING LLC,K32Syli7FzQGIZX83bP2GA,224,2024-11-13,,Possibly related to other Motiwala entities (unverified)
+Tanzania->UAE,AL MASQUAL DMCC,li7gImp8gltcSihYMZRLhg,184,2024-11-15,basel_aml;cpi_score,
+Tanzania->UAE,AL NAJM AL NAMEA GOLD TRADING LCC,gCuM2swdaf3EW2GGJ339vw,130,2024-11-26,,
+Tanzania->UAE,AL RAWAIS JEWELLERY LLC,BtNtc_CR_JHrvnBnthdVog,115,2024-11-19,basel_aml;cpi_score;eu_high_risk_third,Also linked to Pakistan
+Tanzania->UAE,MOTIWALA GOLD TRADING LCC,b63XBQDsAKXbN7Ry20JP-Q,105,2024-03-25,,Possibly related to other Motiwala entities (unverified)
+Tanzania->UAE,MOTIWALA JEWELLERS LLC,VXXJiQD1RDQtHH4ITBraLA,88,2024-11-07,,Possibly related to other Motiwala entities (unverified)
+Ghana->UAE,STONEX COMMODITIES DMCC,FxBlVfwjsqie2x-QmBNFFQ,397,2024-12-18,basel_aml;cpi_score,
+Ghana->UAE,FAVDAZ GOLD LLC,6iTHREhC5FNhetCHh9ndjQ,59,2024-12-18,,
+Ghana->UAE,EMIRATES MINTING FACTORY LLC,9OUcYBdbrarlfLqw7_9s2A,54,2024-12-30,basel_aml;cpi_score,
+Ghana->UAE,PINNACLE I DMCC,GzgbiETsGN87n0KO6dP8zA,45,,exports_ilab_child_labor;exports_ilab_forced_labor;basel_aml;cpi_score,
+Ghana->UAE,JAYHRIIM INTERNATIONAL F.Z.C,EJ4AENGdmUiaWQv2cR7vQA,36,2024-11-29,basel_aml;cpi_score,
+Ghana->UAE,LOOMIS INTERNATIONAL FZE,US9wuZTteiHPLQOcS-P95Q,33,2024-09-04,export_controls_adjacent;sanctioned_adjacent;basel_aml;cpi_score,
+Sudan->Turkey,(aggregate),,12,2022-12-26,,All 12 Sayari records for Sudan departures HS 7108; 2019-10 to 2022-12; no UAE destination
+Egypt->UAE,(aggregate),,0,,,No Sayari records for HS 7108 in this pull

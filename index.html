@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sudanese Gold: Strategic Supply Chain Tracing</title>
+<style>
+:root{--bg:#eef1ee;--fg:#14231f;--mut:#58665f;--card:#fbfcfb;--line:#cfd8d2;--acc:#a97508;--acc-t:#fff;--bad:#a63d2a;--ok:#2d6a4f;--hl:#e3ebe6}
+@media (prefers-color-scheme:dark){:root{--bg:#0e1816;--fg:#e4ece7;--mut:#99a9a1;--card:#15221f;--line:#2b3b36;--acc:#e0ae3c;--acc-t:#1a1405;--bad:#e8806a;--ok:#6fcf9b;--hl:#1c2d29}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,Segoe UI,sans-serif}
+h1,h2,h3{font-family:Georgia,"Iowan Old Style",serif;line-height:1.2;margin:0 0 .5em}
+h1{font-size:clamp(1.6rem,4vw,2.4rem)}h2{font-size:1.5rem}h3{font-size:1.1rem}
+a{color:var(--acc)}p{margin:0 0 1em;max-width:70ch}
+header{padding:28px 20px 8px;max-width:1000px;margin:0 auto}
+header p{color:var(--mut);margin:0}
+#nav{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line);display:flex;gap:4px;overflow-x:auto;padding:8px 20px;max-width:100%}
+#nav button,.chips button,.sub button{font:inherit;font-size:.92rem;border:1px solid var(--line);background:var(--card);color:var(--fg);padding:8px 14px;border-radius:6px;cursor:pointer;white-space:nowrap}
+#nav button[aria-selected=true],.chips button[aria-pressed=true],.sub button[aria-selected=true]{background:var(--acc);color:var(--acc-t);border-color:var(--acc);font-weight:600}
+button:focus-visible,summary:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+main{max-width:1000px;margin:0 auto;padding:24px 20px 60px}
+section[hidden],.sp[hidden]{display:none}
+.lead{color:var(--mut);font-style:italic}
+.card{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:16px 18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin:0 0 1.2em}
+.big{font:700 2rem Georgia,serif;color:var(--acc);display:block;line-height:1.1}
+.tag{display:inline-block;font-size:.75rem;padding:1px 8px;border-radius:99px;border:1px solid var(--bad);color:var(--bad);margin-top:6px}
+.tag.ok{border-color:var(--ok);color:var(--ok)}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 12px}
+.detail{background:var(--hl);border-left:4px solid var(--acc);padding:14px 18px;border-radius:0 8px 8px 0;margin-bottom:1.2em;min-height:5.5em}
+details{background:var(--card);border:1px solid var(--line);border-radius:8px;margin-bottom:8px;padding:10px 16px}
+summary{cursor:pointer;font-weight:600}details[open] summary{margin-bottom:8px}
+table{border-collapse:collapse;width:100%;font-size:.92rem;margin-bottom:1em}
+.tw{overflow-x:auto}
+th,td{text-align:left;padding:7px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-weight:600;color:var(--mut)}
+.bar{display:grid;grid-template-columns:120px 1fr 64px;gap:10px;align-items:center;margin:6px 0;font-size:.92rem}
+.bar i{display:block;height:18px;border-radius:3px;background:var(--mut);opacity:.55;transition:width .35s}
+.bar.af i{background:var(--acc);opacity:1}
+.bar b{text-align:right;font-weight:600}
+.sub{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 16px}
+.note{font-size:.88rem;color:var(--mut)}
+footer{max-width:1000px;margin:0 auto;padding:0 20px 40px;color:var(--mut);font-size:.85rem}
+@media (max-width:560px){.bar{grid-template-columns:90px 1fr 52px}}
+@media (prefers-reduced-motion:reduce){.bar i{transition:none}}
+</style>
+</head>
+<body>
+<header>
+<h1>Sudanese Gold: Strategic Supply Chain Tracing</h1>
+<p>An open-source repository tracing gold from artisanal pits in Sudan to global distribution hubs, with the wealth asymmetry, health impacts and accountability gaps along the way.</p>
+</header>
+<nav id="nav" role="tablist" aria-label="Categories">
+<button data-t="c1">1 Extraction history</button>
+<button data-t="c2">2 Transshipment</button>
+<button data-t="c3">3 Wealth asymmetry</button>
+<button data-t="c4">4 Health &amp; accountability</button>
+<button data-t="c5">5 Methodology</button>
+<button data-t="c6">6 Trade data (Sayari)</button>
+</nav>
+<main>
+
+<section id="c1">
+<h2>Extractive hegemony and sovereign shift, 1940s–2020s</h2>
+<p class="lead">How gold extraction moved from colonial mandates to war liquidity. Select a period.</p>
+<div class="chips" id="eras"></div>
+<div class="detail" id="eraD" aria-live="polite"></div>
+<h3>Two wartime routes, 2023–2026</h3>
+<div class="grid">
+<div class="card"><h3>Northern and eastern</h3><p>Controlled by the Sudanese Armed Forces. Bullion moves through Port Sudan, mainly toward Egypt and Saudi Arabia.</p></div>
+<div class="card"><h3>Western and southern</h3><p>Controlled by the Rapid Support Forces. Gold crosses borders via Chad, South Sudan and the Central African Republic, bound for international transit hubs.</p></div>
+</div>
+</section>
+
+<section id="c2" hidden>
+<h2>Global end-products and transshipment</h2>
+<p class="lead">From artisanal pit to microchip, and where the gold goes in between.</p>
+<h3>Extraction-to-molding lifecycle</h3>
+<div class="chips" id="phases"></div>
+<div class="detail" id="phaseD" aria-live="polite"></div>
+<h3>Transit and destination hubs</h3>
+<div class="grid">
+<div class="card"><b>UAE</b><p>Historically imported 90–97% of Sudan’s declared gold exports (Central Bank of Sudan data), tracked by The Sentry and FATF.<br><span class="tag">source needed</span></p></div>
+<div class="card"><b>Egypt</b><p>Processing and purchase buffer intermediary.</p></div>
+<div class="card"><b>Saudi Arabia and Qatar</b><p>State-backed concessions, processing and joint exploration along the Red Sea coast.</p></div>
+</div>
+<h3>UAE gold imports in 2024, tonnes</h3>
+<div id="swiss"></div>
+<p class="note">Egypt, Chad and Libya are routes into the UAE; Uganda, Rwanda and Togo produce little gold and act as exit points. Source: <a href="https://www.presseportal.ch/de/pm/100072962/100936366">SWISSAID, 4 Nov 2025</a>. The UAE imported 1,392 t in total, 748 t from Africa.</p>
+</section>
+
+<section id="c3" hidden>
+<h2>Financial concentration and wealth asymmetry</h2>
+<p class="lead">Capital flight between Gulf networks and Sudanese labor.</p>
+<div class="grid">
+<div class="card"><span class="big">50–80%</span>of annual output leaves un-monetized by public institutions, via parallel markets, smuggling and hawala.<br><span class="tag">source needed</span></div>
+<div class="card"><span class="big">58%</span>of export value, over $1.5 bn a year, per the Sudanese Mineral Resources Company.<br><span class="tag">source needed</span></div>
+</div>
+<p>The revenue that is captured goes mainly to conflict logistics and military procurement. Meanwhile health services, clean water and public education remain underfunded and close to insolvent.</p>
+</section>
+
+<section id="c4" hidden>
+<h2>Health ecotoxicology and state accountability</h2>
+<p class="lead">Contamination in River Nile State, and who is exposed.</p>
+<div class="grid">
+<div class="card"><span class="big">~700</span>exposed heaps of ‘karta’ tailings<br><span class="tag">source needed</span></div>
+<div class="card"><span class="big">450,000 t</span>of mercury- and cyanide-laden tailings<br><span class="tag">source needed</span></div>
+<div class="card"><span class="big">40 miles</span>between Atbara and El-Ebeidiya<br><span class="tag">source needed</span></div>
+<div class="card"><span class="big">up to 98%</span>of tested subjects above 100 μg/L urinary mercury (Abu Hamad)<br><span class="tag">source needed</span></div>
+</div>
+<p>Field research by Al Neelain University geologists with the Sudanese Environment Conservation Society mapped the corridor. Reported effects include neurological damage and tremors, soil salinity, poisoned livestock water, and rising miscarriages and birth defects. One soil reading of 2,825.24 has no unit recorded.</p>
+<h3>International liability tracker</h3>
+<details><summary>The Qatar conundrum</summary>Legal and corporate liability of Qatari state-backed mining firms expanding copper and gold concessions during active conflict.</details>
+<details><summary>Accountability vector</summary>Do these firms enforce the Minamata Convention on Mercury, or ignore downstream processing mixed with artisanal chemical runoff?</details>
+</section>
+
+<section id="c5" hidden>
+<h2>Research methodology and verification ledger</h2>
+<details open><summary>Satellite imagery</summary>ESA Sentinel-2 imagery traces the growth of artisanal camps and open-pit cyanide leaching pools.</details>
+<details><summary>Trade asymmetry</summary>The Central Bank of Sudan’s Foreign Trade Statistical Digest is compared with UN Comtrade to expose gaps between declared exports and global imports.</details>
+<details><summary>Customs and corporate records</summary>Sayari trade and entity data identify declared shipment corridors and UAE-based buyers (see Category 6).</details>
+<details><summary>Reference frameworks</summary><a href="https://sudantransparency.org">Sudan Transparency and Policy Tracker</a> · <a href="https://minamataconvention.org">Minamata Convention</a> · <a href="https://c4ads.org">C4ADS</a> · <a href="https://globalwitness.org">Global Witness</a></details>
+<h3>Claim verification ledger</h3>
+<div class="chips" id="lf"><button data-f="all" aria-pressed="true">All</button><button data-f="ok" aria-pressed="false">Sourced</button><button data-f="no" aria-pressed="false">Needs source</button></div>
+<div class="tw"><table><thead><tr><th>Claim</th><th>Category</th><th>Status</th></tr></thead><tbody id="led"></tbody></table></div>
+</section>
+
+<section id="c6" hidden>
+<h2>Customs and corporate trade data (Sayari)</h2>
+<p class="lead">HS 7108 gold shipment records, search term “gold”, pulled 9 November 2026. Full data: <a href="data/sayari_uae_gold_corridors.csv">sayari_uae_gold_corridors.csv</a>.</p>
+<div class="sub" role="tablist">
+<button data-t="s1">Sudan footprint</button><button data-t="s2">Departures to UAE</button><button data-t="s3">UAE buyers</button><button data-t="s4">Risk flags</button><button data-t="s5">Caveats</button>
+</div>
+<div class="sp" id="s1">
+<div class="grid">
+<div class="card"><span class="big">12</span>records for gold leaving Sudan, 2019–2022</div>
+<div class="card"><span class="big">12 of 12</span>went to Türkiye, none to the UAE</div>
+<div class="card"><span class="big">0</span>records for Egypt to the UAE</div>
+</div>
+<p>The Sudan–UAE flow documented by SWISSAID does not appear in declared customs records. The corridor runs largely outside the datasets that transaction-level tools ingest, which is why mirror-statistics work (Category 5) is still needed.</p>
+</div>
+<div class="sp" id="s2" hidden>
+<div class="chips" id="dep"><button data-f="af" aria-pressed="true">African departures</button><button data-f="all" aria-pressed="false">All countries</button></div>
+<div id="depBars"></div>
+<p class="note">Shipment records, not tonnes. Declared origin is not proof of where gold was mined: Uganda is a known hub for gold from the DRC and South Sudan.</p>
+</div>
+<div class="sp" id="s3" hidden>
+<div class="chips" id="cor"></div>
+<div class="tw"><table><thead><tr><th>Buyer</th><th>Shipments</th><th>Flags</th></tr></thead><tbody id="buy"></tbody></table></div>
+<p class="note">The three Motiwala entities may be one group. This is unverified.</p>
+</div>
+<div class="sp" id="s4" hidden>
+<div class="tw"><table><thead><tr><th>Sayari flag</th><th>Side</th><th>Count</th></tr></thead><tbody>
+<tr><td>Exports from sectors flagged for child labor (ILAB)</td><td>Supplier</td><td>1,443</td></tr>
+<tr><td>Exports from sectors flagged for forced labor (ILAB)</td><td>Supplier</td><td>1,251</td></tr>
+<tr><td>Exports conflict minerals</td><td>Supplier</td><td>81</td></tr>
+<tr><td>Sanctioned-adjacent</td><td>Supplier</td><td>26</td></tr>
+<tr><td>Export-controls-adjacent</td><td>Supplier</td><td>31</td></tr>
+<tr><td>Sanctioned-adjacent</td><td>Buyer</td><td>129</td></tr>
+<tr><td>Export-controls-adjacent</td><td>Buyer</td><td>97</td></tr>
+<tr><td>Sanctioned (including OFAC SDN)</td><td>Buyer</td><td>6</td></tr>
+</tbody></table></div>
+<p class="note">Flags are screening indicators, not findings of wrongdoing. “Adjacent” means a link in the corporate or trade graph.</p>
+</div>
+<div class="sp" id="s5" hidden>
+<details open><summary>Limits of this data</summary><p>Declared trade only: hand-carried gold, the main smuggling channel SWISSAID describes, is absent. Counts are records, not weight or value. Top-buyer activity runs through late 2024. Many buyer records lack identifiers, so one business can appear under several names.</p></details>
+<details><summary>Next steps</summary><p>Ownership and sanctions screening of flagged buyers. Repeat the filters for Chad, Libya, Rwanda, Togo and Saudi Arabia. Map UAE buyers’ onward shipments to Switzerland, India and Türkiye.</p></details>
+</div>
+</section>
+</main>
+<footer>Contributions are peer-reviewed against OSINT and ecotoxicological verification standards. See CONTRIBUTING.md.</footer>
+
+<script>
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+function chips(box,items,cb,attr){box.innerHTML=items.map((t,i)=>`<button data-i="${i}" aria-pressed="${i==0}">${t}</button>`).join('');
+ const go=i=>{$$('button',box).forEach((b,j)=>b.setAttribute('aria-pressed',j==i));cb(i)};
+ box.onclick=e=>{const b=e.target.closest('button');if(b)go(+b.dataset.i)};go(0)}
+function tabs(btns,panels,id){btns.forEach(b=>b.setAttribute('aria-selected',b.dataset.t===id));panels.forEach(p=>p.hidden=p.id!==id)}
+
+const nb=$$('#nav button'),np=$$('main>section');
+const show=()=>{const id=location.hash.slice(1);tabs(nb,np,np.some(p=>p.id===id)?id:'c1');scrollTo(0,0)};
+nb.forEach(b=>b.onclick=()=>location.hash=b.dataset.t);addEventListener('hashchange',show);show();
+const sb=$$('.sub button'),sp=$$('.sp');sb.forEach(b=>b.onclick=()=>tabs(sb,sp,b.dataset.t));tabs(sb,sp,'s1');
+
+const eras=[['1940s–50s','Late colonial mandate','Early geological surveys under Anglo-Egyptian rule. Institutions set up state-centric mineral monopolies.'],
+['1970s–80s','State mining failures','Large state-run mining attempts failed, pushing local populations toward informal, survival-driven extraction.'],
+['2008–11','The great gold rush','Artisanal and small-scale mining exploded after South Sudan’s secession cost the state 75% of its oil revenue.'],
+['2019–23','Paramilitary consolidation','The Rapid Support Forces seized the Al-Junaid concessions in Darfur, making gold independent sovereign liquidity outside the Central Bank of Sudan.'],
+['2023–26','Wartime bifurcation','Gold became the primary currency of the civil war, with the army and the RSF running separate export routes (below).']];
+chips($('#eras'),eras.map(e=>e[0]),i=>$('#eraD').innerHTML=`<h3>${eras[i][1]}</h3>${eras[i][2]}`);
+
+const ph=[['Extraction','Quartz veins are blasted or dug by hand in River Nile State, Blue Nile and Darfur. The ore is crushed into powder.'],
+['Amalgamation','Liquid mercury binds the gold into a paste. It is squeezed through cloth and heated with open blowtorches, releasing mercury vapor and leaving raw gold sponge.'],
+['Doré','Sponge gold is melted in regional workshops into rough bars that are 80–90% gold, with silver and copper.'],
+['Leakage','Doré crosses border checkpoints or is flown out of Port Sudan and nearby airfields to refining networks.'],
+['Refining','Wohlwill electrolysis or aqua regia strips other metals, producing 99.99% (24 karat) bullion.'],
+['End-products','Bonding wire for microchips; sputtering targets for aerospace visors, satellite blankets and fiber optics; chloroauric acid for colloidal gold in drug delivery.']];
+chips($('#phases'),ph.map((p,i)=>`${i+1}. ${p[0]}`),i=>$('#phaseD').innerHTML=`<h3>${ph[i][0]}</h3>${ph[i][1]}`);
+
+function bars(el,d,max){el.innerHTML=d.map(r=>`<div class="bar ${r[2]?'af':''}"><span>${r[0]}</span><i style="width:${r[1]/max*100}%"></i><b>${r[1].toLocaleString()}</b></div>`).join('')}
+bars($('#swiss'),[['Togo',52,1],['Uganda',31,1],['Sudan',29,1],['Egypt',27,1],['Rwanda',19,1],['Chad',18,1],['Libya',9,1]],52);
+
+const led=[['UAE imported 90–97% of Sudan’s declared gold exports','2','Source needed (Central Bank digest, Comtrade)',0],
+['50–80% of output leaves un-monetized','3','Source needed (model and year)',0],
+['Gold is 58% of export value, $1.5 bn+ (SMRC)','3','Source needed (year, document)',0],
+['~700 heaps, 450,000 t karta, 40-mile corridor','4','Source needed (Al Neelain study)',0],
+['98% of subjects above 100 μg/L urinary mercury','4','Source needed (sample size, population)',0],
+['Soil reading of 2,825.24','4','Unit and study missing',0],
+['2024 UAE import tonnages by country','2','Sourced: SWISSAID, Nov 2025',1],
+['Shipment-record counts','6','Sourced: Sayari, 2026-11-09',1]];
+const lf=f=>$('#led').innerHTML=led.filter(r=>f=='all'||(f=='ok')==!!r[3]).map(r=>`<tr><td>${r[0]}</td><td>${r[1]}</td><td><span class="tag ${r[3]?'ok':''}">${r[2]}</span></td></tr>`).join('');
+$('#lf').onclick=e=>{const b=e.target.closest('button');if(!b)return;$$('#lf button').forEach(x=>x.setAttribute('aria-pressed',x==b));lf(b.dataset.f)};lf('all');
+
+const dep=[['Peru',11677,0],['Colombia',2148,0],['Uganda',1854,1],['Tanzania',1692,1],['Türkiye',1236,0],['Ghana',1089,1],['Russia',683,0],['Ecuador',463,0],['Malaysia',424,0],["Côte d’Ivoire",283,1]];
+const dr=f=>{const d=dep.filter(r=>f=='all'||r[2]);bars($('#depBars'),d,Math.max(...d.map(r=>r[1])))};
+$('#dep').onclick=e=>{const b=e.target.closest('button');if(!b)return;$$('#dep button').forEach(x=>x.setAttribute('aria-pressed',x==b));dr(b.dataset.f)};dr('af');
+
+const by={'Uganda → UAE (66 buyers)':[['Avanish Trading LLC',308,'Jurisdiction risk'],['Tonga Trading FZE',290,'Imports from OFAC-sanctioned entity'],['Adya Jewellery LLC',283,''],['Coda Jewellery LLC',129,''],['Aster Global Trading LLC',108,'ILAB child and forced labor']],
+'Tanzania → UAE (269 buyers)':[['Motiwala Gold Trading LLC',224,''],['Al Masqual DMCC',184,'Jurisdiction risk'],['Al Najm Al Namea Gold Trading LCC',130,''],['Al Rawais Jewellery LLC',115,'EU high-risk third country; Pakistan link'],['Motiwala Gold Trading LCC',105,''],['Motiwala Jewellers LLC',88,'']],
+'Ghana → UAE (124 buyers)':[['StoneX Commodities DMCC',397,'Jurisdiction risk'],['Favdaz Gold LLC',59,''],['Emirates Minting Factory LLC',54,''],['Pinnacle I DMCC',45,'ILAB child and forced labor'],['Jayhriim International FZC',36,''],['Loomis International FZE',33,'Sanctions- and export-controls-adjacent']]};
+const ks=Object.keys(by);
+chips($('#cor'),ks,i=>$('#buy').innerHTML=by[ks[i]].map(r=>`<tr><td>${r[0]}</td><td>${r[1]}</td><td>${r[2]||'None flagged'}</td></tr>`).join(''));
+</script>
+</body>
+</html>
